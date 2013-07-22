@@ -1,0 +1,78 @@
+body {
+	background: #111 url("../img/body-bg14-1.png") repeat;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	text-align: justify;
+	color: #ffffff;
+}
+.container {
+	width: 700px;
+}
+header {
+	text-align: center;
+}
+h1 {
+	line-height: 200px;
+	font-size: 64px;
+	color: #eee;
+	text-shadow: 1px 1px 0 #000;
+}
+#icongroup a.link {
+	text-align: center;
+	font-size: 48px;
+	background: #222 url("../img/body-bg14.png") repeat;
+	border-radius: 4px;
+	padding: 50px;
+	border: 2px solid #000;
+	text-shadow: 1px 1px 0 #000;
+}
+#icongroup a.twitter:hover,
+#icongroup a.twitter:hover:focus,
+#icongroup a.twitter:hover:active {
+	background-color: #049cdb;
+	border: 2px solid #06C;
+}
+#icongroup a.github:hover,
+#icongroup a.github:hover:focus,
+#icongroup a.github:hover:active {
+	background-color: #F90;
+	border: 2px solid #F60;
+}
+#icongroup a.contact:hover,
+#icongroup a.contact:hover:focus,
+#icongroup a.contact:hover:active {
+	background-color: #060;
+	border: 2px solid #080;
+}
+#icongroup a.cloud:hover,
+#icongroup a.cloud:hover:focus,
+#icongroup a.cloud:hover:active {
+	background-color: #900;
+	border: 2px solid #c00;
+}
+a, a:visited, a:focus {
+	color: #fff;
+	text-decoration: none;
+	-o-transition: color 1s ease-out, background 0.5s ease-in;
+	-ms-transition: color 1s ease-out, background 0.5s ease-in;
+	-moz-transition: color 1s ease-out, background 0.5s ease-in;
+	-webkit-transition: color 1s ease-out, background 0.5s ease-in;
+	transition: color 1s ease-out, background 0.5s ease-in;
+	-o-transition: background-color 1s ease-out, background 0.5s ease-in;
+	-ms-transition: background-color 1s ease-out, background 0.5s ease-in;
+	-moz-transition: background-color 1s ease-out, background 0.5s ease-in;
+	-webkit-transition: background-color 1s ease-out, background 0.5s ease-in;
+	transition: background-color 1s ease-out, background 0.5s ease-in;
+}
+a:hover, a:active, code {
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #000, 1px 1px 10px;
+}
+#footer {
+	text-align: center;
+	margin: 100px 0 0 0;
+	text-shadow: 1px 1px 0 #000;
+}
