@@ -29,6 +29,11 @@ h1 {
 	white-space: pre;
 	font-size: 12px;
 }
+.well span {
+	display: inline-block;
+	width: 16px;
+	text-align: right;
+}
 .well em {
 	font-size: 16px;
 }
