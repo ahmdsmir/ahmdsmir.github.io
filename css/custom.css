@@ -19,6 +19,28 @@ h1 {
 	color: #eee;
 	text-shadow: 1px 1px 0 #000;
 }
+.well {
+	background: #222 url("../img/body-bg14.png") repeat;
+	border-radius: 4px;
+	padding: 20px;
+	border: 2px solid #000;
+	text-shadow: 1px 1px 0 #000;
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	white-space: pre;
+	font-size: 12px;
+}
+.well em {
+	font-size: 16px;
+}
+.well a {
+	color:#00e6ff;
+}
+.well a:hover,
+.well a:focus,
+.well a:active,
+.well a:visited {
+	color: #F90;
+}
 #icongroup a.link {
 	text-align: center;
 	font-size: 48px;
@@ -75,4 +97,7 @@ a:hover, a:active, code {
 	text-align: center;
 	margin: 100px 0 0 0;
 	text-shadow: 1px 1px 0 #000;
+}
+.bs-docs-grid div.row-fluid div {
+	background: #222 url("../img/body-bg14.png") repeat;	
 }
