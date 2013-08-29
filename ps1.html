@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bash $PS1 Generator</title>
+<style>
+body {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: "DejaVu Sans Mono", "Liberation Mono", "Lucida Console", monospace;
+	font-size: small;
+}
+body.dark {
+	background-color: #000000;
+	color: #AAAAAA;
+}
+body.light {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+pre,code {
+	font-family: "DejaVu Sans Mono", "Liberation Mono", "Lucida Console", monospace;
+	font-size: small;
+}
+pre {
+	display: block;
+}
+td, th {
+	border: 1px solid #999999;
+}
+th {
+	text-align: left;
+	vertical-align: middle;
+	color: #FFFF00;
+	font-weight: bold;
+}
+body.light th {
+	color: #FF0000;
+}
+td {
+	text-align: left;
+	vertical-align: middle;
+}
+a:link, a:visited {
+	color: #0099FF;
+	text-decoration: underline;
+}
+
+body.dark fieldset {
+	border: 1px inset #999999;
+}
+body.light fieldset {
+	border: 1px inset #000000;
+}
+body.dark legend {
+	color: #FF9900;
+	font-weight: bold;
+}
+body.light legend {
+	color: #0000FF;
+	font-weight: bold;
+}
+
+/* dark background colors */
+body.dark .black {
+	color: #666666;
+}
+body.dark .white {
+	color: #FFFFFF;
+}
+body.dark .red {
+	color: #FF4444;
+}
+body.dark .green {
+	color: #00FF00;
+}
+body.dark .blue {
+	color: #0099FF;
+}
+body.dark .cyan {
+	color: #00FFFF;
+}
+body.dark .magenta {
+	color: #FF99FF;
+}
+body.dark .yellow {
+	color: #FFFF00;
+}
+
+/* light background colors */
+body.light .black {
+	color: #000000;
+}
+body.light .white {
+	color: #999999;
+}
+body.light .red {
+	color: #FF0000;
+}
+body.light .green {
+	color: #009900;
+}
+body.light .blue {
+	color: #0000FF;
+}
+body.light .cyan {
+	color: #009999;
+}
+body.light .magenta {
+	color: #FF00FF;
+}
+body.light .yellow {
+	color: #999900;
+}
+</style>
+</head>
+<body class="dark">
+
+<h1>Bash $PS1 Generator</h1>
+
+This tool will help you generate a custom colorful bash prompt for Unix-like operating
+systems, including Linux and Mac OS X. [<a href="#help">Help</a>]<p>
+
+<fieldset>
+	<legend>Preview</legend>
+
+	This is a "live" preview of how your custom bash prompt will look in a terminal:<p>
+
+	<span id="preview">[user@host ~]$ </span><span id="cursor">_</span><p>
+
+	Set preview background color: [<a href="#" onClick="return setScheme('dark')">Dark</a> | <a href="#" onClick="return setScheme('light')">Light</a>]
+</fieldset><p>
+
+<fieldset>
+	<legend>Components</legend>
+
+	You will construct your custom bash prompt by defining it one component at a time.
+	The components are processed in order, so for example if one component sets the
+	color to "red", text in the following component will have red text.<p>
+
+	You can use the following bash keywords in any "Text" component. See `<code>man bash</code>` for a more complete list:<p>
+
+	<pre>	\u  The name of the logged-in user
+	\h  The hostname up to the first '.'
+	\H  The full hostname
+	\n  Newline
+	\$  Shows a $ for a regular user or # for root user
+	\\  A literal backslash "\" character</pre><p>
+
+	<table id="components" width="550" border="0" cellspacing="1" cellpadding="2">
+		<tr>
+			<th width="20">Delete</th>
+			<th width="20">Type</th>
+			<th>Data</th>
+		</tr>
+		<tr id="row-0" class="component">
+			<td>
+				<del>delete</del>
+			</td>
+			<td>
+				<select name="type" id="type-0" onChange="setType(this)">
+					<option value="text">Text</option>
+					<option value="color">Set color</option>
+					<option value="reset">Reset styles</option>
+				</select>
+			</td>
+			<td id="datacell-0">
+				<input type="text" size="30" value="[\u@\h \W]\$ " id="data-0" onKeyUp="dataChanged(this)">
+			</td>
+		</tr>
+		<tr id="template" style="display: none">
+			<td>
+				<a href="#" onClick="return del(this)">delete</a>
+			</td>
+			<td>
+				<select name="type" onChange="setType(this)">
+					<option value="text">Text</option>
+					<option value="color">Set color</option>
+					<option value="reset">Reset styles</option>
+				</select>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+	</table><br>
+	<a href="#" onClick="return addComponent()">Add new component</a>
+</fieldset><p>
+
+<fieldset>
+	<legend>Result</legend>
+
+	Paste the following output into your <code>~/.bashrc</code> or equivalent file:<p>
+
+	<textarea id="result" cols="80" rows="4" readonly>export PS1="[\u@\h \W]\\$ "</textarea>
+</fieldset><p>
+
+<fieldset>
+	<legend>Help</legend>
+
+	This is an interactive tool to aid in setting a custom (and colorful) bash command prompt.<p>
+
+	Unlike other prompt generating tools that insert ANSI escape sequences to set colors for your
+	prompt, this one uses the bash <code>\[$(...)\]</code> sequence to use the <code>tput</code>
+	command to set the colors. This means that bash has a more accurate internal idea of how long
+	your prompt is, so that word wrapping for example behaves correctly as you enter a long command.<p>
+
+	<strong>How to Use</strong><p>
+
+	You'll construct a custom bash prompt by using the Components builder above. The components are
+	processed in order, so for example if you have a "Set color -&gt; red" followed by text, that text
+	will be displayed in red in your bash prompt.<p>
+
+	A live preview (generated via JavaScript) will give you a rough idea how your prompt is going to
+	look so far. It has built-in support for handling common bash keywords such as \u and \h, but it
+	won't process more complicated ones. The final output for your <code>.bashrc</code> file will be
+	shown in the "<strong>Result</strong>" box that you can paste into your <code>.bashrc</code>.
+	Starting a new bash shell after saving the changes should show your new bash prompt.<p>
+
+	<strong>Example</strong><p>
+
+	Enter these values in your component list (where "{space}" is a space character).
+
+	<ul>
+		<li>Set color: blue</li>
+		<li>Text: [</li>
+		<li>Set color: magenta</li>
+		<li>Text: \u</li>
+		<li>Set color: blue</li>
+		<li>Text: @</li>
+		<li>Set color: magenta</li>
+		<li>Text: \h{space}</li>
+		<li>Set color: green</li>
+		<li>Text: \W</li>
+		<li>Set color: blue</li>
+		<li>Text: ]\${space}</li>
+	</ul>
+
+	<strong>Author</strong><p>
+
+	Noah Petherbridge, <a href="http://www.kirsle.net/">www.kirsle.net</a>.
+</fieldset>
+
+<script type="text/javascript">
+function o (id) {
+	return document.getElementById(id);
+}
+
+function init () {
+	// Start blinking the cursor.
+	setTimeout("blink()", 500);
+}
+
+function blink () {
+	if (o("cursor").innerHTML == "_") {
+		o("cursor").innerHTML = "&nbsp;";
+	}
+	else {
+		o("cursor").innerHTML = "_";
+	}
+	setTimeout("blink()", 500);
+}
+
+var cid = 1;
+function addComponent () {
+	// Clone the template row
+	var row = o("template").cloneNode(true);
+
+	// Insert the new row
+	o("components").appendChild(row);
+	row.style.display = "";
+
+	// Set its ID and class
+	row.setAttribute("id", "row-" + cid);
+	row.className = "component";
+
+	// Its delete link
+	row.cells[0].getElementsByTagName("a")[0].setAttribute("id", "del-" + cid);
+
+	// Initialize its type.
+	var sel = row.cells[1].getElementsByTagName("select")[0];
+	sel.setAttribute("id", "type-" + cid);
+	row.cells[2].setAttribute("id", "datacell-" + cid);
+	setType(sel);
+
+	cid = cid + 1;
+	return false;
+}
+
+function del (link) {
+	var tmp = link.id.split("-");
+	var id  = tmp[1];
+	var row = o("row-" + id);
+	if (window.confirm("Delete this component?")) {
+		o("components").removeChild(row);
+	}
+	return false;
+}
+
+function setType (sel) {
+	var tmp = sel.id.split("-");
+	var id  = tmp[1];
+	var type = sel.value;
+
+	if (type == "text") {
+		o("datacell-" + id).innerHTML = "<input type=\"text\" size=\"30\" onKeyUp=\"dataChanged(this)\" id=\"data-" + id + "\">";
+	}
+	else if (type == "color") {
+		o("datacell-" + id).innerHTML = "<select onChange=\"dataChanged(this)\" id=\"data-" + id + "\">"
+			+ "<option value=\"white\">White</option>"
+			+ "<option value=\"red\">Red</option>"
+			+ "<option value=\"green\">Green</option>"
+			+ "<option value=\"blue\">Blue</option>"
+			+ "<option value=\"cyan\">Cyan</option>"
+			+ "<option value=\"magenta\">Magenta</option>"
+			+ "<option value=\"yellow\">Yellow</option>"
+			+ "<option value=\"black\">Black</option>"
+			+ "</select>";
+	}
+	else if (type == "bold") {
+		o("datacell-" + id).innerHTML = "<select onChange=\"dataChanged(this)\" id=\"data-" + id + "\">"
+			+ "<option value=\"on\">on</option>"
+			+ "<option value=\"off\">off</option>"
+			+ "</select>";
+	}
+	else if (type == "reset") {
+		o("datacell-" + id).innerHTML = "Reset all styles.<input type=\"hidden\" name=\"data-" + id + "\" value=\"reset\">";
+	}
+
+	dataChanged();
+}
+
+function dataChanged(obj) {
+	// regenerate the preview
+	o("preview").innerHTML = "";
+	var html = "";
+	var PS1  = "";
+	var spans = 0;
+	var hasColor = false;
+	var rows = o("components").getElementsByTagName("tr");
+	for (var r = 0; r < rows.length; r++) {
+		if (rows[r].className != "component") {
+			continue;
+		}
+
+		var tmp2 = rows[r].id.split("-");
+		var rid  = tmp2[1];
+		var data = "";
+		if (o("data-" + rid)) {
+			data = o("data-" + rid).value;
+		}
+
+		// process its type
+		var type = o("type-" + rid);
+		if (type.value == "text") {
+			html += bash(data);
+			PS1  += data;
+		}
+		else if (type.value == "color") {
+			html += "<span class=\"" + data + "\">";
+			spans++;
+			PS1  += color(data);
+			hasColor = true;
+		}
+		else if (type.value == "bold") {
+			// TODO
+		}
+		else if (type.value == "reset") {
+			for (var i = 0; i < spans; i++) {
+				html += "</span>";
+			}
+			spans = 0;
+		}
+	}
+
+	for (var i = 0; i < spans; i++) {
+		html += "</span>";
+	}
+
+	// If it has color, add bold and reset
+	if (hasColor) {
+		PS1 = "\\[$(tput bold)\\]" + PS1 + "\\[$(tput sgr0)\\]";
+	}
+
+	// Double-escape \$.
+	PS1 = PS1.replace(/\\\$/g, "\\\\$");
+	PS1 = PS1.replace(/"/g, "\\\"");
+
+	o("preview").innerHTML = html;
+	o("result").value = "# Custom bash prompt via kirsle.net/wizards/ps1.html\nexport PS1=\"" + PS1 + "\"";
+}
+
+function bash (text) {
+	text = text.replace(/\\a/g, "");
+	text = text.replace(/\\u/g, "user");
+	text = text.replace(/\\h/g, "host");
+	text = text.replace(/\\H/g, "host.name");
+	text = text.replace(/\\j/g, "2");
+	text = text.replace(/\\n/g, "<br>");
+	text = text.replace(/\\r/g, "");
+	text = text.replace(/\\s/g, "bash");
+	text = text.replace(/\\t/g, "HH:MM:SS");
+	text = text.replace(/\\T/g, "HH:MM:SS");
+	text = text.replace(/\\@/g, "am");
+	text = text.replace(/\\v/g, "2.00");
+	text = text.replace(/\\V/g, "2.00.0");
+	text = text.replace(/\\w/g, "/home/user");
+	text = text.replace(/\\W/g, "~");
+	text = text.replace(/\\!/g, "0");
+	text = text.replace(/\\#/g, "0");
+	text = text.replace(/\\\$/g, "$");
+	text = text.replace(/\\\\/g, "\\");
+	text = text.replace(/\\[.+?\\]/g, "");
+	return text;
+}
+
+function color (name) {
+	// This returns a tput setaf for the color given.
+	var num;
+
+	var map = {
+		"black":   0,
+		"red":     1,
+		"green":   2,
+		"yellow":  3,
+		"blue":    4,
+		"magenta": 5,
+		"cyan":    6,
+		"white":   7
+	};
+
+	if (map[name]) {
+		return "\\[$(tput setaf " + map[name] + ")\\]";
+	}
+}
+
+function setScheme (scheme) {
+	document.body.className = scheme;
+	return false;
+}
+
+window.onload = init;
+</script>
+
+</body>
+</html>
