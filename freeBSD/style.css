@@ -26,3 +26,9 @@
 .icon-FreeBSD:before {
 	content: "\fffff";
 }
+.gradient {
+  background: -webkit-linear-gradient(#cc0000, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 768px;
+}
