@@ -1,34 +1,23 @@
-@font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+body {
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
 }
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-FreeBSD:before {
-	content: "\fffff";
+h1 {
+	text-align: center;
+	padding: 10px;
+	margin: 0;
 }
 .gradient {
-  background: -webkit-linear-gradient(#cc0000, #000);
+  background: -webkit-radial-gradient(#cc0000, #900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 768px;
+  font-size: 128px;
+}
+.btn {
+	display: block;
+	font-size: 36px;
+}
+.btn.download {
+	font-size: 24px;
+	margin-top: 30px;
 }

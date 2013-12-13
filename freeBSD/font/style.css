@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'freeBSD';
+	src:url('fonts/freeBSD.eot');
+	src:url('fonts/freeBSD.eot?#iefix') format('embedded-opentype'),
+		url('fonts/freeBSD.ttf') format('truetype'),
+		url('fonts/freeBSD.woff') format('woff'),
+		url('fonts/freeBSD.svg#freeBSD') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'freeBSD';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-freebsd:before {
+	content: "\e9999";
+}
