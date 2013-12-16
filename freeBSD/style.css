@@ -17,8 +17,7 @@ h1,h2,h3,h4 {
   background-image: linear-gradient(to bottom, #cc0000 0%, #990000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 256px;
-	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
+  font-size: 192px;
 }
 .btn {
 	display: block;
@@ -35,4 +34,7 @@ h1,h2,h3,h4 {
 footer {
 	text-align: center;
 	color: #999999;
+}
+h1 {
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) !important;
 }
