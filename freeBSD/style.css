@@ -11,13 +11,14 @@ h1,h2,h3,h4 {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 .gradient {
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#cc0000), to(#990000));
-  background-image: -webkit-linear-gradient(top, #cc0000 0%, #990000 100%);
-  background-image: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
-  background-image: linear-gradient(to bottom, #cc0000 0%, #990000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 192px;
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#cc0000), to(#990000));
+	background-image: -webkit-linear-gradient(top, #cc0000 0%, #990000 100%);
+	background-image: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
+	background-image: linear-gradient(to bottom, #cc0000 0%, #990000 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 192px;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 .btn {
 	display: block;
@@ -35,6 +36,14 @@ footer {
 	text-align: center;
 	color: #999999;
 }
-h1 {
-	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) !important;
+.panel-danger {
+	border-color: #cc0000;
+}
+.panel-primary > .panel-heading {
+	background-color: #cc0000;
+	background: linear-gradient(to bottom, #cc0000, #990000);
+	border-bottom-color: #cc0000;
+}
+.panel-heading h1 {
+	color: #ffffff;
 }
