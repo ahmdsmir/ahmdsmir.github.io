@@ -39,7 +39,7 @@ footer {
 .panel-danger {
 	border-color: #cc0000;
 }
-.panel-primary > .panel-heading {
+.panel-danger > .panel-heading {
 	background-color: #cc0000;
 	background: linear-gradient(to bottom, #cc0000, #990000);
 	border-bottom-color: #cc0000;
