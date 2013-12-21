@@ -88,11 +88,12 @@ a, a:visited, a:focus {
 	-moz-transition: color 1s ease-out, background 0.5s ease-in;
 	-webkit-transition: color 1s ease-out, background 0.5s ease-in;
 	transition: color 1s ease-out, background 0.5s ease-in;
-	-o-transition: background-color 1s ease-out, background 0.5s ease-in;
+/*	-o-transition: background-color 1s ease-out, background 0.5s ease-in;
 	-ms-transition: background-color 1s ease-out, background 0.5s ease-in;
 	-moz-transition: background-color 1s ease-out, background 0.5s ease-in;
 	-webkit-transition: background-color 1s ease-out, background 0.5s ease-in;
 	transition: background-color 1s ease-out, background 0.5s ease-in;
+	*/
 }
 a:hover, a:active, code {
 	color: #fff;
