@@ -1,0 +1,283 @@
+
+
+<html>
+<head>
+<title>RaidCalc - Raid Disk Space Utilization Calculator - Raid, RAID, Redundancy, Performance - iBeast Business Solutions</title>
+<script language="JavaScript">
+<!--
+
+
+
+function CalculateRaid()
+{
+	NumberOfDisks = parseInt(document.FORM_Raid.txtNumberOfDisks.value);
+	//alert(NumberOfDisks);
+	SpaceOnDrives = parseFloat(document.FORM_Raid.txtSpaceofDrives.value);
+	DiskSpace = NumberOfDisks*SpaceOnDrives;
+	
+	//alert(document.FORM_Raid.txtDiskSpace.value);
+	strTitle = "";
+	strDef = "";
+	strRedundancy = "";
+	strPerformance = "";
+	strUtilization = "";
+	strDrawbacks = "";
+
+  if (document.FORM_Raid.txtNumberOfDisks.value == "" || document.FORM_Raid.txtSpaceofDrives.value == "")
+  {
+	
+  }
+  else
+  {	
+	for (i=0;i<document.FORM_Raid.rRAIDTYPE.length;i++)
+	{
+		if (document.FORM_Raid.rRAIDTYPE[i].checked)
+		{
+			strRaidType = document.FORM_Raid.rRAIDTYPE[i].value; 
+		}
+		
+	}
+	
+	//alert (strRaidType);
+	if (parseInt(document.FORM_Raid.txtNumberOfDisks.value) != 2 && strRaidType == "RAID1")
+	{
+		strRaidType = "XRAID1";
+	}
+	if (parseInt(document.FORM_Raid.txtNumberOfDisks.value)%2 != 0 && strRaidType == "RAID01")
+	{
+		strRaidType = "XVALUE2";
+	}
+	if (document.FORM_Raid.txtSpaceofDrives.value == "" || document.FORM_Raid.txtNumberOfDisks.value == "")
+	{
+		strRaidType = "XVALUE";	
+	}
+	switch(strRaidType)
+	{
+		case "XVALUE2":
+			strString = "";
+			strString = strString + "ERROR \n";
+			strString = strString + "You must enter a multiple of '2' for the Number Of Disks.";
+			document.FORM_Raid.txtCALC.value = strString;
+			document.FORM_Raid.txtDiskSpace.value = "ERROR";
+			document.FORM_Raid.txtDiskSpace2.value = "ERROR";
+			break;
+		case "XRAID1":
+			strString = "";
+			strString = strString + "ERROR \n";
+			strString = strString + "ERROR \n";
+			strString = strString + "You must enter '2' for the Number Of Disks.";
+			document.FORM_Raid.txtCALC.value = strString;
+			document.FORM_Raid.txtDiskSpace.value = "ERROR";
+			document.FORM_Raid.txtDiskSpace2.value = "ERROR";
+			break;
+		case "XVALUE":
+			strString = "";
+			strString = strString + "ERROR \n";
+			strString = strString + "Missing required data.";
+			document.FORM_Raid.txtCALC.value = strString;
+			document.FORM_Raid.txtDiskSpace.value = "ERROR";	
+			document.FORM_Raid.txtDiskSpace2.value = "ERROR";	
+			break;
+		case "RAID0":
+			strString = "";
+			strString = strString + "RAID Level 0-Data Striping \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "By definition RAID level 0 is not RAID because it does not provide data redundancy.  Data is striped across all drives without parity. \n\n";
+			strString = strString + "Redundancy \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "None.  If a drive fails all data is lost.\n\n";
+			strString = strString + "Performance \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High.  Provides the best performance and storage efficiency in I/O intensive environments because there is no parity related overhead. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "No Data Redundancy \n\n";
+			strUtilization = DiskSpace ;
+			strUtilization2 = ((DiskSpace*1000000000)/1073741824) ;
+			document.FORM_Raid.txtDiskSpace.value = parseInt(strUtilization*100)/100;
+			document.FORM_Raid.txtDiskSpace2.value = parseInt(strUtilization2*100)/100;			
+			document.FORM_Raid.txtCALC.value = strString;
+			break;
+		case "RAID1":
+			strString = "";
+			strString = strString + "RAID Level 1-Disk Mirroring \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Data is written to a primary disk and a secondary disk.  Identical data is stored on both disks. \n\n";
+			strString = strString + "Redundancy \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "A mirrored set of drives is created.\n\n";
+			strString = strString + "Performance \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High performance in read intensive applications.  If one drive is busy data can be accessed from the secondary disk.  High write performance because of no parity overhead. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High cost per megabyte because double the amount of drives is required to achieve desired capacity. \n\n";
+			strUtilization = DiskSpace/2 ;
+			strUtilization2 = ((DiskSpace*1000000000)/1073741824)/2 ;
+			document.FORM_Raid.txtDiskSpace.value = parseInt(strUtilization*100)/100;
+			document.FORM_Raid.txtDiskSpace2.value = parseInt(strUtilization2*100)/100;			
+			document.FORM_Raid.txtCALC.value = strString;
+			break;
+		case "RAID01":
+			strString = "";
+			strString = strString + "RAID Level 0+1-Data Striping with Mirroring \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "RAID 0+1 is a combination of RAID levels 0 and 1 by striping data across pairs of mirrored disk drives. \n\n";
+			strString = strString + "Redundancy \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "A striped array (RAID 0) of mirrored drive pairs (RAID 1) is created.  You can sustain more than one drive failure as long as they are not in the same mirrored set. \n\n";
+			strString = strString + "Performance \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High performance because data is striped and there is no parity overhead. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High cost per megabyte because double the amount of drives is required to achieve desired capacity. \n\n";
+			strUtilization = DiskSpace/2 ;
+			strUtilization2 = ((DiskSpace*1000000000)/1073741824)/2 ;
+			document.FORM_Raid.txtDiskSpace.value = parseInt(strUtilization*100)/100;
+			document.FORM_Raid.txtDiskSpace2.value = parseInt(strUtilization2*100)/100;			
+			document.FORM_Raid.txtCALC.value = strString;
+			break;
+		case "RAID2":
+			strString = "";
+			strString = strString + "RAID Level 2-Bit Interleaving with Error Correction Codes \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Data is striped at a bit level across an array of disk drives with additional drives inserted in the system for error correcting code or parity data. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "RAID level 2 is intended for use with drives that don't have built-in error detection. Since all SCSI drives today have built-in error detection, RAID level 2 is of little use. \n\n";
+			document.FORM_Raid.txtDiskSpace.value = "Not Available";
+			document.FORM_Raid.txtCALC.value = strString;
+			document.FORM_Raid.txtDiskSpace2.value = ""
+			
+			break;
+		case "RAID3":
+			strString = "";
+			strString = strString + "RAID Level 3-Data Striping with Dedicated Parity and Parallel Access \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Data is striped at a byte level across an array of disk drives with one drive dedicated for parity.  Data is accessed in parallel. \n\n";
+			strString = strString + "Redundancy \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "One drive is dedicated for parity. Data is regenerated in the event of a drive failure. \n\n";
+			strString = strString + "Performance \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High performance in data intensive applications because data is accessed in parallel.  High transfer rates. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Poor performance in I/O intensive applications because write operations cannot be overlapped due to dedicated parity drive. \n\n";
+			strUtilization = (DiskSpace * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100)) ;
+			strUtilization2 = (((DiskSpace*1000000000)/1073741824) * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100)) ;
+			document.FORM_Raid.txtDiskSpace.value = parseInt(strUtilization*100)/100;
+			document.FORM_Raid.txtDiskSpace2.value = parseInt(strUtilization2*100)/100;			
+			document.FORM_Raid.txtCALC.value = strString;
+			break;
+		case "RAID4":
+			strString = "";
+			strString = strString + "RAID Level 4- Data Striping with Dedicated Parity and Independent Access \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Data is striped at a block level across an array of disk drives with one drive dedicated to parity.  Data is accessed independently instead of in parallel. \n\n";
+			strString = strString + "Redundancy \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "One drive is dedicated for parity. Data is regenerated in the event of a drive failure. \n\n";
+			strString = strString + "Performance \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High performance in transaction intensive applications that require high read requests because data is accessed independently.  High transaction rate. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Write bottleneck.  Write operations cannot be overlapped because there is one parity drive. \n\n";
+			strUtilization = (DiskSpace * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100));
+			strUtilization2 = (((DiskSpace*1000000000)/1073741824) * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100));
+			document.FORM_Raid.txtDiskSpace.value = parseInt(strUtilization*100)/100;
+			document.FORM_Raid.txtDiskSpace2.value = parseInt(strUtilization2*100)/100;			
+			document.FORM_Raid.txtCALC.value = strString
+			break;
+		case "RAID5":
+			strString = "";
+			strString = strString + "RAID Level 5- Data Striping with Distributed Parity \n\n";
+			strString = strString + "Definition \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Data is striped across a group of disk drives with distributed parity.  Parity information is written to a different disk in the array for each stripe. \n\n";
+			strString = strString + "Redundancy \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Parity is distributed across the disks in the array.  Data is regenerated in the event of a drive failure. \n\n";
+			strString = strString + "Performance \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "High performance in small record, multiprocessing environments because there is no contention for the parity disk and read and write operations can be overlapped.  No write bottlenecks as with RAID 4. \n\n";
+			strString = strString + "Drawbacks \n";
+			strString = strString + "---------------------------------------------- \n";
+			strString = strString + "Distributed parity causes overhead on write operations. There is also overhead created when data is changed, because parity information must be located and then recalculated. \n\n";
+			strUtilization = (DiskSpace * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100)) ;
+			//strUtilization = (DiskSpace * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100)) ;
+			strUtilization2 = (((DiskSpace*1000000000)/1073741824) * ((parseInt(((NumberOfDisks-1)/NumberOfDisks)*10000)/100)/100))
+			document.FORM_Raid.txtDiskSpace.value = parseInt(strUtilization*100)/100;
+			document.FORM_Raid.txtDiskSpace2.value = parseInt(strUtilization2*100)/100;
+			document.FORM_Raid.txtCALC.value = strString
+			break;
+	}
+  }
+	
+}
+function openStatic()
+{
+	document.FORM_Raid.txtCALC.value = "    Please Enter Your Information and then Click on a RAID Selection.";
+}
+
+//-->
+</script>
+<style>
+body {
+	Font-Family:arial,veranda;
+}
+a{
+	font-weight:bold;font-size:14;color:#ffff00;font-family:arial,veranda;
+}
+A:hover {
+        COLOR:#ffffff;
+}
+.button{
+	border-style:solid;border-width:1px;border-color:#ffffff;background-color:#003366;color:#ffffff;
+}
+.input{
+	border-style:solid;border-width:1;border-color:#000000;
+}
+</style>
+</head>
+<body text="#ffffff" bgColor="#003366" style="font-family:Arial,Helvetica;font-size:12;" onLoad="openStatic();">
+<form name="FORM_Raid">
+<table border="0" cellpadding="0" cellspacing="0" align="center" style="font-family:Airal,Helvetica;font-size:14;">
+  <tr>
+	<td width="300" valign="top">
+	<font size="+4" style="color:#ffffff;"><b>RAID</b></font><font size="+2" style="color:#ffffff;"><b>Calc</b></font> -<font size="-3"> iBeast Raid Calculator</font><br>
+	<center><font size="-3" color="#ffff00">- Part of the iCalc Suite -</font></center><br>
+	
+	  
+		Number of Disks: <input type="text" name="txtNumberOfDisks" value size="5" onBlur="CalculateRaid();">
+		<br>
+		Space of each drive: <input type="text" value name="txtSpaceofDrives" size="5" onBlur="CalculateRaid();"> (GB)
+		<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID0" onClick="CalculateRaid();" CHECKED>&nbsp;Raid 0<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID1" onClick="CalculateRaid();">&nbsp;Raid 1<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID01" onClick="CalculateRaid();">&nbsp;Raid 0+1<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID2" onClick="CalculateRaid();">&nbsp;Raid 2<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID3" onClick="CalculateRaid();">&nbsp;Raid 3<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID4" onClick="CalculateRaid();">&nbsp;Raid 4<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rRAIDTYPE" value="RAID5" onClick="CalculateRaid();">&nbsp;Raid 5<br>
+		<br>
+		Total Array Size: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" value name="txtDiskSpace" size="10"> GB<BR>
+		Total Useable Disk Space: <input type="text" value name="txtDiskSpace2" size="10"> GB		
+	</td>
+	<td valign="top" bgcolor="#426286">
+			<textarea name="txtCALC" cols="70" rows="25" style="font-family:Arial,Helvetica;font-size:12;font-weight:bold;background-color:#426286;border-color:#426286;border-style:solid;border-width:3;color:#ffffff;overflow:hidden;" scrolling="no" wrap="virtual"></textarea>
+	</td>
+  </tr>
+</table>
+</form>
+
+</body>
+</html>
