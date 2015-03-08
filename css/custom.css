@@ -9,7 +9,10 @@ body {
 	padding-top: 65px;
 }
 .container {
-	width: 800px;
+	text-align: center;	
+}
+.container img {
+	width: 80% !important;
 }
 header {
 	text-align: center;
