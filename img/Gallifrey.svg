@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" color-rendering="auto" color-interpolation="auto" stroke="black" text-rendering="auto" stroke-linecap="square" width="1280" stroke-miterlimit="10" stroke-opacity="1" shape-rendering="auto" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" height="854" xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto">
+  <!-- Generated with Apache Batik by Toks Circular Gallifreyan Transliterator. -->
+  <defs id="genericDefs" />
+  <g>
+    <defs id="defs1">
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
+        <path d="M0 0 L1280 0 L1280 854 L0 854 L0 0 Z" />
+      </clipPath>
+    </defs>
+    <g stroke-width="2" font-size="30" font-weight="bold" font-family="monospace">
+      <rect x="0" y="0" clip-path="url(#clipPath1)" width="1280" height="854" stroke="none" />
+      <path fill="none" d="M1023.1759 418.4542 A318 318 0 0 0 823.8026 764.0308" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M440.9813 99.0233 A318 318 0 0 0 839.6253 98.5353" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M455.3483 763.0533 A318 318 0 0 0 254.6209 417.9911" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="10" cx="640" cy="806" stroke="#E74C3C" />
+      <path fill="none" d="M756.9334 617.6292 A40 40 0 0 0 757.1048 696.4012" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="40" cx="640" cy="533" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="8" cx="640" cy="533" stroke="#E74C3C" />
+      <path fill="none" d="M523.0666 696.3708 A40 40 0 0 0 522.8952 617.5988" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="540" cy="680" stroke="none" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="533" cy="686" stroke="none" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="524" cy="689" stroke="none" />
+      <path fill="none" d="M522.3633 696.2122 A124 124 0 0 0 757.3324 697.1136" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M757.6367 617.7878 A124 124 0 0 0 522.6676 616.8864" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M913.5334 409.8126 A79 79 0 0 0 764.3579 410.1241" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="9" cx="839" cy="458" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="45" cx="946" cy="250" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="9" cx="946" cy="250" stroke="#E74C3C" />
+      <path fill="none" d="M717.0435 326.7574 A79 79 0 0 0 791.1932 197.8358" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle r="5" clip-path="url(#clipPath1)" cx="779" cy="296" stroke="none" />
+      <circle r="5" clip-path="url(#clipPath1)" cx="765" cy="307" stroke="none" />
+      <circle r="5" clip-path="url(#clipPath1)" cx="747" cy="314" stroke="none" />
+      <path fill="none" d="M715.9268 327.132 A124 124 0 0 0 763.6389 410.4718" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M913.7227 410.9571 A124 124 0 0 0 790.8809 197.7172" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="7" cx="440" cy="453" stroke="#E74C3C" />
+      <path fill="none" d="M550.9204 363.1327 A29 29 0 0 0 515 408" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M549.9279 255.8053 A29 29 0 0 0 562.9841 311.8461" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="540" cy="270" stroke="none" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="544" cy="265" stroke="none" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="550" cy="262" stroke="none" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="5" cx="560" cy="283" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="29" cx="493" cy="199" stroke="#E74C3C" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="471" cy="207" stroke="none" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="469" cy="200" stroke="none" />
+      <circle r="2" clip-path="url(#clipPath1)" cx="470" cy="193" stroke="none" />
+      <path fill="none" d="M361.8705 215.0863 A29 29 0 0 0 413.6088 190.1257" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="5" cx="380" cy="186" stroke="#E74C3C" />
+      <path fill="none" d="M317.9806 334.99 A52 52 0 0 0 341.0449 235.9041" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M319 339 A56 56 0 0 0 343.6488 232.7164" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="5" cx="305" cy="280" stroke="#E74C3C" />
+      <path fill="none" d="M364.025 407.9737 A29 29 0 0 0 328.0796 363.1327" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M362.415 407.7294 A124 124 0 0 0 515.8483 409.0971" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M552.2891 363.6039 A124 124 0 0 0 563.9959 312.0081" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M550.909 255.5455 A124 124 0 0 0 413.95 189.7672" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M361.8065 214.7619 A124 124 0 0 0 341.1606 236.1216" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M318.1465 333.9724 A124 124 0 0 0 327.5309 363.2178" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M454.7895 763.3823 A384 384 0 0 0 824.0193 764.0354" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M1023.894 417.979 A384 384 0 0 0 839.9133 99.1423" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M440.8169 98.6982 A384 384 0 0 0 256.1295 417.0293" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <circle clip-path="url(#clipPath1)" fill="none" r="398" cx="640" cy="427" stroke="#E74C3C" />
+      <path fill="none" d="M735 685 L597 822" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M668 562 L862 756" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M800 367 L602 30" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M923 288 L624 824" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M415 201 L1002 262" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M339 359 L314 197" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M640 574 L640 825" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M839 356 L839 82" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M906 273 L298 630" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M399 226 L664 824" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M735 629 L310 204" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M612 562 L417 756" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M878 367 L971 207" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M901 250 L283 250" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M370 223 L242 420" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M370 398 L979 634" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+      <path fill="none" d="M938 254 L297 630" clip-path="url(#clipPath1)" stroke="#E74C3C" />
+    </g>
+  </g>
+</svg>
