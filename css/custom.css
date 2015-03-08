@@ -26,6 +26,7 @@ h1 {
 }
 h1 img {
 	width: 512px;
+	margin-bottom: 10px;
 }
 .well {
 	background: #222;
