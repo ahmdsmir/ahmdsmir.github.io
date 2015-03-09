@@ -26,13 +26,8 @@ h1 {
 	text-shadow: 1px 1px 0 #000;
 }
 h1 img {
-<<<<<<< Updated upstream
-	width: 500px;
-	margin-bottom: 30px;
-=======
 	width: 512px;
 	margin-bottom: 50px;
->>>>>>> Stashed changes
 }
 .well {
 	background: #222;
