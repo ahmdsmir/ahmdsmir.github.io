@@ -12,7 +12,8 @@ body {
 	width: 900px !important;
 }
 .container img {
-	width: 75% !important;
+	width: 100% !important;
+	margin-top: 50px;
 }
 header {
 	text-align: center;
@@ -25,8 +26,13 @@ h1 {
 	text-shadow: 1px 1px 0 #000;
 }
 h1 img {
+<<<<<<< Updated upstream
 	width: 500px;
 	margin-bottom: 30px;
+=======
+	width: 512px;
+	margin-bottom: 50px;
+>>>>>>> Stashed changes
 }
 .well {
 	background: #222;
@@ -38,6 +44,7 @@ h1 img {
 	white-space: pre;
 	font-size: 12px;
 	box-shadow: none !important;
+	margin-top: 50px;
 }
 .well span {
 	display: inline-block;
@@ -64,7 +71,13 @@ h1 img {
 }
 #custom-bootstrap-menu.navbar-default .navbar-brand {
     color: rgba(255, 255, 255, 1) !important;
+    padding: 0 !important;
 }
+#custom-bootstrap-menu.navbar-default .navbar-brand img {
+    height: 45px;
+    padding-top: 2px !important;
+}
+
 #custom-bootstrap-menu.navbar-default {
     font-size: 16px !important;
     background: rgba(16, 16, 16, 1) !important;
