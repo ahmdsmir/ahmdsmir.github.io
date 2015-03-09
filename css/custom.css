@@ -9,10 +9,11 @@ body {
 	padding-top: 65px;
 }
 .container {
-	width: 900px !important;
+	max-width: 900px !important;
 }
 .container img {
 	width: 95% !important;
+	max-width: 100% !important;
 	margin-top: 35px;
 }
 header {
@@ -40,6 +41,7 @@ h1 img {
 	font-size: 12px;
 	box-shadow: none !important;
 	margin-top: 50px;
+	overflow: auto;
 }
 .well span {
 	display: inline-block;
