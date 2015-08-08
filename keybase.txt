@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/excalibur
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://excalibur.io
+  * I am excalibur (https://keybase.io/excalibur) on keybase.
+  * I have a public key with fingerprint 3626 DD23 70C4 00F7 3B9D  FC2F 0092 A7C7 ABDB EBF1
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "3626dd2370c400f73b9dfc2f0092a7c7abdbebf1",
+            "host": "keybase.io",
+            "key_id": "0092a7c7abdbebf1",
+            "kid": "0101b5d0e91a0547af558286f639afb691fb9641bf39f8cba39340f21fd8ec7f90290a",
+            "uid": "00edbd472e06536f40c949509f9c6819",
+            "username": "excalibur"
+        },
+        "service": {
+            "hostname": "excalibur.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1439069710,
+    "expire_in": 157680000,
+    "prev": "5cd4ed26e46c6d4f176610dc152ca0ec11d6869fc17442bd21d73d01028666c4",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.34
+Comment: https://keybase.io/crypto
+
+yMISAnicbZJrSBRRFMd3tfIRaQaFZX5oKEla69553Nm7JKS9oJA+hFBR6Mx96KDO
+bLMPM4tAI8ywNvomEfb4EAllUFQIsZUIFoKFQVsESaLkUiQSvSi7k/Ulul8u95zf
++Z97/pyBRZm+XP8We6DjWfmjXf4nDypivurBeF6rZDq0RQq1Sg3s98Utu465Ydey
+o1JIUpCMKJUVHRAVAK4rJqacyBwALBs60Q2TmszkUApI9U7EqxAyphFh6y1HxMSj
+xqIi+h++YS4BATQ1ChiGBtBU3eCaFpSDiCMFG9xEGHITIxWaXME8SExDwYoKuAw5
+DTKicwxkDAwhF/vTh1GTqrrMANIUxFVAsIo1gDkmKAixB0aYaxtNTNDsEDEaLTPm
+SkcDkgjHLcI8D7xR/kXmBgq7TtQhTqPI1Eej4ZBXGG0Je2QzM2v+aNSYlk2Fj6Ig
+ztyI5dhSCAqSRC1PFKoKBgjrEASEfthyWY3lEZqOgkAcrw2LC0mNUJVRGTEVEURV
+DnWEIKAEajIxACMQUhREmBOoq6psUhlSXaHCUmEgQkSVvKkO2o4U0sU3jTohGbHq
+bCMac5l09GFy/zyfP9e3YH6Gtwm+3JzFf/ejZzjb137bt6Jhac/I4ztNJerMaEZn
+emXb5gvDlcu3F1cUnNhZ/dR/P9XPSxPXe29O5H7MTOYor3d0F7Vvm6nqmG1rXbaw
+JGbEz91+07Lt2vvUlq6pl+8mpzNejbc/RL4xuSyzdvVzcHV0R119Xv4JsObmh+ap
+7uElge7WpmJnPP39+M+qoSZ7vKjly7GyNRumq9dlfc+rnektTBb/SMzuATldiRt3
+h0u7i5rfTuYXBIeeKond49l7O1+sv3epLz1yufbKvq/Fbsk3td+ulNJoXmFGn39w
+YldqLe6Y3nT44unCVNX5/lE+ETtSlHMyeXBrFkkc0DYmyvMSt459+nwqHTg7turM
+L7hOJts=
+=f5+5
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/excalibur
+
+==================================================================
